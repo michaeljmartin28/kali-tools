@@ -1,0 +1,3 @@
+# Ignore executable reverse-shells. They can be generated from the sh string.
+/remote_tools/shells/reverse* 
+
