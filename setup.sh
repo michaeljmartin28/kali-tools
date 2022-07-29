@@ -15,6 +15,17 @@ echo -e "User: $SUDO_USER\n"
 cp home/.* /home/$SUDO_USER/
 
 
+# Installing programs
+apt-get update && \
+apt-get install -y flameshot && \
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
+install -y -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings && \
+sh -c 'echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && \
+rm -f packages.microsoft.gpg && \
+apt install -y apt-transport-https && \
+apt update && \
+apt install -y code 
+
 # Pull down useful git repos
 
 git clone https://github.com/samratashok/nishang.git /opt/nishang
