@@ -12,7 +12,7 @@ echo -e "Setting up home user configuration files for vim, tmux, and zsh. Change
 
 echo -e "User: $SUDO_USER\n"
 
-cp ./home/* /home/$SUDO_USER/
+cp home/.* /home/$SUDO_USER/
 
 
 # Pull down useful git repos
