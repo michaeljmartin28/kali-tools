@@ -13,6 +13,7 @@ echo -e "Setting up home user configuration files for vim, tmux, and zsh. Change
 echo -e "User: $SUDO_USER\n"
 
 cp home/.* /home/$SUDO_USER/
+cp history/.zsh_history /home/$SUDO_USER/.zsh_history
 
 
 # Installing programs
@@ -26,6 +27,11 @@ apt install -y apt-transport-https && \
 apt update && \
 apt install -y code 
 
+
+
 # Pull down useful git repos
 
-git clone https://github.com/samratashok/nishang.git /opt/nishang
+if [ ! -d "/opt/nishang" ] 
+then
+    git clone https://github.com/samratashok/nishang.git /opt/nishang
+fi
