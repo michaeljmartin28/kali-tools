@@ -22,7 +22,7 @@ cp history/.zsh_history /home/$SUDO_USER/.zsh_history
 apt-get update && \
 
 # install flameshot for screenshots
-apt-get install -y flameshot && \
+apt-get install -y flameshot
 
 # Install VSCode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
@@ -31,12 +31,18 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/c
 rm -f packages.microsoft.gpg && \
 apt install -y apt-transport-https && \
 apt update && \
-apt install -y code && \ 
+apt install -y code
 
 # Install rlwrap
 apt install -y rlwrap 
 
+# Install GoBuster
+apt install -y gobuster
 
+# Creating wordlists directory
+mkdir /home/$SUDO_USER/wordlists
+gzip -k -d /usr/share/wordlists/rockyou.txt.gz && \
+mv /usr/share/wordlists/rockyou.txt /home/$SUDO_USER/wordlists
 
 # Pull down useful git repos
 
