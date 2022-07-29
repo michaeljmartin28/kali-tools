@@ -39,6 +39,11 @@ apt install -y rlwrap
 # Install GoBuster
 apt install -y gobuster
 
+# Install Seclists
+apt install -y seclists
+
+
+
 # Creating wordlists directory
 mkdir /home/$SUDO_USER/wordlists
 gzip -k -d /usr/share/wordlists/rockyou.txt.gz && \
