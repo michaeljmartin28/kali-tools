@@ -42,6 +42,8 @@ apt install -y gobuster
 # Install Seclists
 apt install -y seclists
 
+# Install 32-bit libraries
+apt install -y gcc-multilib
 
 
 # Creating wordlists directory
