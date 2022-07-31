@@ -10,6 +10,8 @@ oscpip=`ip a | egrep -o "([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}).*tun" 
 
 ports=(4444 5555 443)
 
+echo $oscpip > ip.txt
+
 # 32-bit payloads
 for PORT in ${ports[@]}
 do 
